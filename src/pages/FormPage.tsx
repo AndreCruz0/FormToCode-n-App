@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import NameInput from "../components/form/NameInput";
 import EmailInput from "../components/form/EmailInput";
 import TelephoneInput from "../components/form/TelephoneInput";
@@ -43,14 +43,13 @@ export default function FormPage() {
     trigger,
     watch,
     reset,
-    control,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = () => {
     setShowSuccess(true);
     reset();
   };
@@ -70,7 +69,7 @@ export default function FormPage() {
 
         <NameInput register={register} errors={errors} />
         <EmailInput register={register} errors={errors} />
-        <TelephoneInput control={control} errors={errors} setValue={setValue} trigger={trigger} watch={watch} />
+        <TelephoneInput  errors={errors} setValue={setValue} trigger={trigger} watch={watch} />
         <PasswordInput register={register} errors={errors} />
         <ConfirmPasswordInput register={register} errors={errors} />
 

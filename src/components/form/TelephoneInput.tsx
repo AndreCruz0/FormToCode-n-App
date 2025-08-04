@@ -1,14 +1,13 @@
 import { IMaskInput } from "react-imask";
 
 type Props = {
-  control: any;
   errors: any;
   setValue: any;
   trigger: any;
   watch: any;
 };
 
-export default function TelephoneInput({ control, errors, setValue, trigger, watch }: Props) {
+export default function TelephoneInput({  errors, setValue, trigger, watch }: Props) {
   return (
     <div className="mb-4">
       <label className="block font-semibold mb-1 text-green-700">Telefone</label>
